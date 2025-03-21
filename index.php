@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
 <h1>😂 Chuck Norris Joke Generator</h1>
 <nav>
     <ul>
@@ -14,6 +15,10 @@
         <li><a href="about.html">За нас</a></li>
     </ul>
 </nav>
+</header>
+<main>
+    
+</main>
     
 </body>
 </html>
