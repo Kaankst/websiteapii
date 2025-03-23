@@ -44,6 +44,8 @@
             <button onclick="window.location.reload();">Получете нова шега</button>
         </section>
 </main>
-    
+<footer>
+        <p>&copy; 2025 Всички права запазени.</p>
+    </footer> 
 </body>
 </html>
