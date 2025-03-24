@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuck Norris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>😂 Chuck Norris Joke Generator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li> 
+                <li><a href="about.html">За нас</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Случайна шега</h2>
+            <div id="joke-box">
+                <p>Зареждане на шега...</p>
+            </div>
+            <button id="new-joke">Получете нова шега</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Всички права запазени.</p>
+    </footer>
+
+    <script>
+        async function fetchJoke() {
+            try {
+                const response = await fetch("https://api.chucknorris.io/jokes/random");
+                if (!response.ok) throw new Error("API request failed");
+                const data = await response.json();
+                document.getElementById("joke-box").innerHTML = `<p>${data.value}</p>`;
+            } catch (error) {
+                document.getElementById("joke-box").innerHTML = `<p>⚠️ Failed to load a joke. Try again!</p>`;
+            }
+        }
+
+        document.getElementById("new-joke").addEventListener("click", fetchJoke);
+        fetchJoke();
+    </script>
+</body>
+</html>
