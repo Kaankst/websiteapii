@@ -6,18 +6,16 @@
     <title>Chuck Norris</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .rotate {
-            animation: spin 1s ease-in-out;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+     body {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
     </style>
 </head>
 <body>
     <header>
-        <h1>😂 Chuck Norris Joke Generator</h1>
+  
         <nav>
             <ul>
                 <li><a href="index.html">Начало</a></li> 
@@ -26,7 +24,7 @@
         </nav>
     </header>
     <main>
-        <img id="chuck-image" src="1.jpg" alt="Chuck Norris" width="200">
+        <h1>😂 Chuck Norris Joke Generator</h1>
         <section>
             <h2>Случайна шега</h2>
             <div id="joke-box">
@@ -42,12 +40,9 @@
     <script>
         async function fetchJoke() {
             try {
-                const image = document.getElementById("chuck-image");
-            image.classList.add("rotate"); 
-            setTimeout(() => image.classList.remove("rotate"), 1000); 
+                const randomImage = `url(${Math.ceil(Math.random() * 4)}.jpg)`;
+                document.body.style.backgroundImage = randomImage;
 
-            const randomImage = `${Math.ceil(Math.random() * 4)}.jpg`;
-            image.src = randomImage;
                 const response = await fetch("https://api.chucknorris.io/jokes/random");
                 if (!response.ok) throw new Error("API request failed");
                 const data = await response.json();
