@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuck Norris</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        header {
-            background-color: #333;
-            color: white;
-    padding: 20px;
-}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chuck Norris</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>😂 Chuck Norris Joke Generator</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="about.html">За нас</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Какво е това?</h2>
-            <p>Този уебсайт използва публичното API на Chuck Norris за да ви предоставя случайни шеги за Чък Норис.</p>
-        </section>
-        <section>
-            <h2>Как работи?</h2>
-            <p>Всеки път, когато презаредите страницата или натиснете бутона за нова шега, системата прави заявка към API-то и извлича нова случайна шега.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Всички права запазени.</p>
-    </footer>
-    <script>
-        const main = document.querySelector("main");
-        const randomImage = `url(${Math.ceil(Math.random() * 3)}.jpg)`; // or use "images/1.jpg" if in a folder
-        main.style.backgroundImage = randomImage;
-    </script>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="about.html">За нас</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>😂 Chuck Norris Joke Generator</h1>
+      <h2>Какво е това?</h2>
+      <p>Този уебсайт използва публичното API на Chuck Norris за да ви предоставя случайни шеги за Чък Норис.</p>
+    </section>
+    <section>
+      <h2>Как работи?</h2>
+      <p>Всеки път, когато презаредите страницата или натиснете бутона за нова шега, системата прави заявка към API-то и извлича нова случайна шега.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Всички права запазени.</p>
+  </footer>
+
+  <script>
+    const backgroundImage = `url(${Math.ceil(Math.random() * 3)}.jpg)`; // or "images/1.jpg"
+    document.body.style.backgroundImage = backgroundImage;
+  </script>
 </body>
 </html>
